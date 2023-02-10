@@ -4,7 +4,7 @@ import { mtsTel, a1Tel, email } from "../../../../utils/constants";
 import { formattedTel } from "../../../../utils/utils";
 
 function Topnav(props:any) {
-  const topnav = useRef();
+  const topnav = useRef<HTMLElement>(null);
   const [isShownDropdown, setIsShownDropdown] = useState(false);
 
   useEffect(() => {

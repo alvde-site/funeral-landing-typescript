@@ -29,10 +29,10 @@ function Calculator(props:any) {
 
   const [count, setCount] = useState(defaultCount);
   const [result, setResult] = useState(defaultResult);
-  const fieldRef = useRef(null);
+  const fieldRef = useRef<HTMLDivElement>(null);
   const handleScrollToRelult = () => {
     if (fieldRef) {
-      fieldRef.current.scrollIntoView();
+      fieldRef.current!.scrollIntoView();
     }
   };
 
