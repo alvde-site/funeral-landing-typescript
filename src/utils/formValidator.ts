@@ -7,7 +7,10 @@ export function useFormWithValidation() {
   const [errors, setErrors] = React.useState({});
   const [isValid, setIsValid] = React.useState(false);
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.FormEvent) => {
+    if (!(event.target instanceof HTMLInputElement)) {
+      return;
+    }
     const target = event.target;
     const name = target.name;
     const value = target.value;
@@ -15,7 +18,7 @@ export function useFormWithValidation() {
     setValues({ ...values, [name]: value });
     setChecks({ ...checks, [name]: check });
     setErrors({ ...errors, [name]: target.validationMessage });
-    setIsValid(target.closest("form").checkValidity());
+    setIsValid((target.closest("form") as HTMLElement).checkValidity());
   };
 
   const resetForm = useCallback(
