@@ -55,7 +55,7 @@ function Calculator(props:any) {
   }
 
   function calculations(count:any, priceList:any) {
-    const tilesCount = (
+    const tilesCount:any = (
       Math.ceil(
         ((((count.onlygraves
           ? count.gravescount > 1
@@ -103,7 +103,7 @@ function Calculator(props:any) {
     });
   }
 
-  function handleCheckChange(e) {
+  function handleCheckChange(e:any) {
     const input = e.target.name;
     let val;
     switch (input) {
@@ -124,7 +124,7 @@ function Calculator(props:any) {
     return Number(count.tilesize) === 900 ? 15 : 20;
   }
 
-  function handleDecreaseButton(e) {
+  function handleDecreaseButton(e:any) {
     const input = e.target.nextSibling.name;
     const value = e.target.nextSibling.value;
     let countNumber = selectLengthCountNumber();

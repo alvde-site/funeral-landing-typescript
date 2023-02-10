@@ -20,10 +20,10 @@ import rectangle from "../images/rectangle.jpeg";
 import rectangle1 from "../images/rectangle1.jpeg";
 
 export const feedbackButton = document.querySelector(".header__feedback"); // Кнопка открытия popup формы заполнения профиля
-export const burger = document.querySelector(".burger-menu");
+export const burger = document.querySelector(".burger-menu") as HTMLElement;
 export const navContent = document.querySelector(".topnav__content");
 export const topnav = document.querySelector(".topnav");
-export const menu = document.querySelector(".topnav__links");
+export const menu = document.querySelector(".topnav__links")  as HTMLElement;
 export const topnavContacts = document.querySelector(".topnav__contacts");
 export const scrollUpButton = document.queryCommandValue(".scrollup");
 export const DeletedToken = "Токен удален";

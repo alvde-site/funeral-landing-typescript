@@ -22,7 +22,7 @@ function Topnav(props:any) {
     props.onToggleBurger();
   }
 
-  function handleShowDropdown(e) {
+  function handleShowDropdown(e:any) {
     setIsShownDropdown(!isShownDropdown);
   }
 

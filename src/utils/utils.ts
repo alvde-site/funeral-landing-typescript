@@ -1,4 +1,4 @@
-import { burger, menu } from "./constants.js";
+import { burger, menu } from "./constants";
 
 // Переключает меню бургера
 export const toggleBurger = () => {
@@ -6,33 +6,33 @@ export const toggleBurger = () => {
   menu.classList.toggle("topnav__links_opened");
 };
 
-const activateTopnavShadow = (topnav) => {
+const activateTopnavShadow = (topnav:any) => {
   topnav.classList.add("topnav_on_shadow");
 };
 
-const deactivateTopnavShadow = (topnav) => {
+const deactivateTopnavShadow = (topnav:any) => {
   topnav.classList.remove("topnav_on_shadow");
 };
 
-const activateTopnavContacts = (topnavContacts) => {
+const activateTopnavContacts = (topnavContacts:any) => {
   topnavContacts.classList.add("topnav__contacts_active");
 };
 
-const deactivateTopnavContacts = (topnavContacts) => {
+const deactivateTopnavContacts = (topnavContacts:any) => {
   topnavContacts.classList.remove("topnav__contacts_active");
 };
 
 //Работа с кнопкой наверх при скоролле
-const activateScrollUpButton = (button) => {
+const activateScrollUpButton = (button:any) => {
   button.classList.add("scrollup_active");
 };
 
-const deactivateScrollUpButton = (button) => {
+const deactivateScrollUpButton = (button:any) => {
   button.classList.remove("scrollup_active");
 };
 
 //Активирует тень когда topnav на верху
-export const handleTopnavTopPosition = (topnav) => {
+export const handleTopnavTopPosition = (topnav:any) => {
   const topnavContacts = document.querySelector(".topnav__contacts");
   const scrollUpButton = document.querySelector(".scrollup");
   if (!topnav) {
@@ -61,7 +61,7 @@ export const handeDeviceWidth = () => {
   }
 };
 
-export const formattedTel = (tel) => {
+export const formattedTel = (tel:any) => {
   return `+375(29) ${
     tel.slice(-7, -4) + "-" + tel.slice(-4, -2) + "-" + tel.slice(-2)
   }`;

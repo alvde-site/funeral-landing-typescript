@@ -14,7 +14,7 @@ function Footer() {
       <div className="footer__content">
         <ul className="footer__contacts">
           <li className="footer__item">
-            <div className="footer__logo" src="" alt=""></div>
+            <div className="footer__logo"></div>
           </li>
           <li className="footer__item">
             <p className="footer__hours">Круглосуточно</p>

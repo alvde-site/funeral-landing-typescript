@@ -1,7 +1,7 @@
 import Swiper from "../Swiper/Swiper";
 
-function ImagePopup(props) {
-  function handleOverlayClose(e) {
+function ImagePopup(props:any) {
+  function handleOverlayClose(e:any) {
     props.onOverlayClose(e);
   }
   return (

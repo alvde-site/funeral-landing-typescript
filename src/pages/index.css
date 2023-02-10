@@ -24,14 +24,5 @@
 @import url(../components/App/Footer/Footer.css);
 /* Кнопка наверх */
 @import url(../components/App/ScrollUp/ScrollUp.css);
-/* login */
-@import url(../components/App/Login/Login.css);
-/* Clients */
-@import url(../components/App/Clients/Clients.css);
-@import url(../components/App/Clients/Client/Client.css);
 /* popups */
-@import url(../components/App/HandleFeedbackPopup/HandleFeedbackPopup.css);
 @import url(../components/App/ImagePopup/ImagePopup.css);
-@import url(../components/App/InfoTooltip/InfoTooltip.css);
-/* Старница не найдена */
-@import url(../components/App/PageNotFound/PageNotFound.css);
