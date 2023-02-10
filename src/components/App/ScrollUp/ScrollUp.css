@@ -1,0 +1,19 @@
+.scrollup {
+  box-sizing: border-box;
+  position: fixed;
+  display: block;
+  opacity: 0;
+  text-decoration: none;
+  bottom: 30px;
+  right: 30px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.5) url(../../../images/svg/arrow.svg)
+    center/262% no-repeat;
+  border-radius: 50%;
+  transition: all 1s;
+}
+
+.scrollup_active {
+  opacity: 1;
+}
