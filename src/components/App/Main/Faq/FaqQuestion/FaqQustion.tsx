@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function FaqQuestion({ questionData }) {
+function FaqQuestion({ questionData }:any) {
   const [isQuestionOpen, setIsQuestionOpen] = useState(false);
   function handleClick() {
     setIsQuestionOpen(!isQuestionOpen);

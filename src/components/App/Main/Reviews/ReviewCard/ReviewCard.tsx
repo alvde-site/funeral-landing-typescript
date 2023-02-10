@@ -1,4 +1,4 @@
-function ReviewCard({ review }) {
+function ReviewCard({ review }:any) {
   return (
     <li className="reviews__content">
       <img

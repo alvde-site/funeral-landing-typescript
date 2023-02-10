@@ -11,7 +11,7 @@ import Topnav from "./Topnav/Topnav";
 import Catalog from "./Catalog/Catalog";
 import Calculator from "./Calculator/Calculator";
 
-function Main(props) {
+function Main(props:any) {
   return (
     <main className="content">
       <Topnav

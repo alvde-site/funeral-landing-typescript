@@ -3,7 +3,7 @@ import { handleTopnavTopPosition } from "../../../../utils/utils";
 import { mtsTel, a1Tel, email } from "../../../../utils/constants";
 import { formattedTel } from "../../../../utils/utils";
 
-function Topnav(props) {
+function Topnav(props:any) {
   const topnav = useRef();
   const [isShownDropdown, setIsShownDropdown] = useState(false);
 

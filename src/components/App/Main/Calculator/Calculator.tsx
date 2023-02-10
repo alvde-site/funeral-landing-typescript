@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import Result from "./Result/Result";
 import { infoImageFoto } from "../../../../utils/constants";
 
-function Calculator(props) {
+function Calculator(props:any) {
   const defaultCount = {
     gravescount: 1,
     widthcount: 120,
@@ -40,7 +40,7 @@ function Calculator(props) {
     props.onInfoClick(infoImageFoto);
   }
 
-  function handleSumbit(e) {
+  function handleSumbit(e:any) {
     e.preventDefault();
     calculations(count, priceList);
     setResult((state) => {
@@ -54,7 +54,7 @@ function Calculator(props) {
     setResult(defaultResult);
   }
 
-  function calculations(count, priceList) {
+  function calculations(count:any, priceList:any) {
     const tilesCount = (
       Math.ceil(
         ((((count.onlygraves
@@ -85,7 +85,7 @@ function Calculator(props) {
 
     const totalCount = tilesPrice + curbsPrice;
 
-    setResult((prevState) => {
+    setResult((prevState:any) => {
       return {
         ...prevState,
         tilescount: tilesCount,
@@ -97,7 +97,7 @@ function Calculator(props) {
     });
   }
 
-  function handleChangeCount(inputElement, newValue) {
+  function handleChangeCount(inputElement:any, newValue:any) {
     setCount((prevState) => {
       return { ...prevState, [inputElement]: newValue };
     });
@@ -156,7 +156,7 @@ function Calculator(props) {
     }
   }
 
-  function handleIncreaseButton(e) {
+  function handleIncreaseButton(e:any) {
     const input = e.target.previousSibling.name;
     const value = e.target.previousSibling.value;
     let countNumber = selectLengthCountNumber();
@@ -183,14 +183,14 @@ function Calculator(props) {
     }
   }
 
-  function handleExtraSize(extraLength, countItem, inputName) {
+  function handleExtraSize(extraLength:any, countItem:any, inputName:any) {
     if (extraLength) {
       const newValue = Number(countItem) + extraLength;
       handleChangeCount(inputName, newValue);
     }
   }
 
-  function getExtraSize(value, countItem) {
+  function getExtraSize(value:any, countItem:any) {
     if (Number(value) === 3600) {
       const extraLength = 20 - (countItem % 20);
       return 20 !== extraLength ? extraLength : 0;
@@ -202,7 +202,7 @@ function Calculator(props) {
     }
   }
 
-  function handleSelectChange(e) {
+  function handleSelectChange(e:any) {
     const target = e.target;
     const name = target.name;
     const value = target.value;

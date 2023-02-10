@@ -1,4 +1,4 @@
-function PortfolioImage(props) {
+function PortfolioImage(props:any) {
   function handleClick() {
     props.onImageClick(props.portfolioImage);
   }

@@ -1,6 +1,6 @@
 import FaqQuestion from "./FaqQuestion/FaqQustion";
 
-function Faq(props) {
+function Faq(props:any) {
   return (
     <section className="faq" id={"faq"}>
       <h1 className="faq__title">Часто задаваемые вопросы</h1>
@@ -9,7 +9,7 @@ function Faq(props) {
         <div className="faq__content-items">
           <div className="faq__questions-wrapper">
             <ul className="faq__questions">
-              {props.questionsDataList.map((questionData, index) => {
+              {props.questionsDataList.map((questionData:any, index:any) => {
                 return <FaqQuestion questionData={questionData} key={index} />;
               })}
             </ul>

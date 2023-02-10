@@ -1,4 +1,4 @@
-function CatalogCard(props) {
+function CatalogCard(props:any) {
   function handleOpenSlide() {
     props.onImageClick(props.catalogCard);
   }

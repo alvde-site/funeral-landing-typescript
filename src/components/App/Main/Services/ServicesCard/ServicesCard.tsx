@@ -1,4 +1,4 @@
-function ServicesCard(props) {
+function ServicesCard(props:any) {
   return (
     <li className="services__card">
       <img

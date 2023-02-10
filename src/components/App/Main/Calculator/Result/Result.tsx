@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { mtsTel, a1Tel } from "../../../../../utils/constants";
 
-function Result({ result }) {
+function Result({ result }:any) {
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
   function handleFeedback() {
     setWhatsappMessage();
