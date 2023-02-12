@@ -9,6 +9,7 @@ import {
   servicesData,
 } from "../../utils/constants";
 import ScrollUp from "./ScrollUp/ScrollUp";
+import Topnav from "./Topnav/Topnav";
 
 function App() {
   const [isToggleBurger, setIsToggleBurger] = useState(false);
@@ -36,9 +37,11 @@ function App() {
   return (
     <div className="page">
       <Header />
-      <Main
+      <Topnav
         isToggleBurger={isToggleBurger}
         onToggleBurger={handleToggleBurger}
+      />
+      <Main
         portfolioImages={portfolioImages}
         servicesData={servicesData}
         questionsDataList={questionsDataList}
