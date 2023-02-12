@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import Result from "./Result/Result";
 import { infoImageFoto } from "../../../../utils/constants";
 
-function Calculator(props:any) {
+function Calculator(props: any) {
   const defaultCount = {
     gravescount: 1,
     widthcount: 120,
@@ -22,9 +22,9 @@ function Calculator(props:any) {
   };
 
   const priceList = {
-    tile30: 90,
+    tile30: 100,
     tile60: 150,
-    curb: 22,
+    curb: 25,
   };
 
   const [count, setCount] = useState(defaultCount);
@@ -40,7 +40,7 @@ function Calculator(props:any) {
     props.onInfoClick(infoImageFoto);
   }
 
-  function handleSumbit(e:any) {
+  function handleSumbit(e: any) {
     e.preventDefault();
     calculations(count, priceList);
     setResult((state) => {
@@ -54,20 +54,17 @@ function Calculator(props:any) {
     setResult(defaultResult);
   }
 
-  function calculations(count:any, priceList:any) {
-    const tilesCount:any = (
-      Math.ceil(
-        ((((count.onlygraves
-          ? count.gravescount > 1
-            ? count.gravescount * 110
-            : 120
-          : count.widthcount) /
-          100) *
-          count.lengthcount) /
-          100) *
-          2 *
-          2
-      ) / 2
+  function calculations(count: any, priceList: any) {
+    const tilesCount: any = Math.ceil(
+      ((((count.onlygraves
+        ? count.gravescount > 1
+          ? count.gravescount * 110
+          : 120
+        : count.widthcount) /
+        100) *
+        count.lengthcount) /
+        100) *
+        10
     ).toFixed(1);
     const tilesPrice =
       tilesCount *
@@ -85,7 +82,7 @@ function Calculator(props:any) {
 
     const totalCount = tilesPrice + curbsPrice;
 
-    setResult((prevState:any) => {
+    setResult((prevState: any) => {
       return {
         ...prevState,
         tilescount: tilesCount,
@@ -97,13 +94,13 @@ function Calculator(props:any) {
     });
   }
 
-  function handleChangeCount(inputElement:any, newValue:any) {
+  function handleChangeCount(inputElement: any, newValue: any) {
     setCount((prevState) => {
       return { ...prevState, [inputElement]: newValue };
     });
   }
 
-  function handleCheckChange(e:any) {
+  function handleCheckChange(e: any) {
     const input = e.target.name;
     let val;
     switch (input) {
@@ -124,7 +121,7 @@ function Calculator(props:any) {
     return Number(count.tilesize) === 900 ? 15 : 20;
   }
 
-  function handleDecreaseButton(e:any) {
+  function handleDecreaseButton(e: any) {
     const input = e.target.nextSibling.name;
     const value = e.target.nextSibling.value;
     let countNumber = selectLengthCountNumber();
@@ -156,7 +153,7 @@ function Calculator(props:any) {
     }
   }
 
-  function handleIncreaseButton(e:any) {
+  function handleIncreaseButton(e: any) {
     const input = e.target.previousSibling.name;
     const value = e.target.previousSibling.value;
     let countNumber = selectLengthCountNumber();
@@ -168,6 +165,10 @@ function Calculator(props:any) {
         const widthCount = count.widthcount < val * 110 ? val * 110 : null;
         if (widthCount) {
           handleChangeCount("widthcount", widthCount);
+          const extraWidth = getExtraSize(count.tilesize, widthCount);
+          handleExtraSize(extraWidth, widthCount, "widthcount");
+          const extraLength = getExtraSize(count.tilesize, count.lengthcount);
+          handleExtraSize(extraLength, count.lengthcount, "lengthcount");
         }
         break;
       case "widthcount":
@@ -183,14 +184,14 @@ function Calculator(props:any) {
     }
   }
 
-  function handleExtraSize(extraLength:any, countItem:any, inputName:any) {
+  function handleExtraSize(extraLength: any, countItem: any, inputName: any) {
     if (extraLength) {
       const newValue = Number(countItem) + extraLength;
       handleChangeCount(inputName, newValue);
     }
   }
 
-  function getExtraSize(value:any, countItem:any) {
+  function getExtraSize(value: any, countItem: any) {
     if (Number(value) === 3600) {
       const extraLength = 20 - (countItem % 20);
       return 20 !== extraLength ? extraLength : 0;
@@ -202,7 +203,7 @@ function Calculator(props:any) {
     }
   }
 
-  function handleSelectChange(e:any) {
+  function handleSelectChange(e: any) {
     const target = e.target;
     const name = target.name;
     const value = target.value;
