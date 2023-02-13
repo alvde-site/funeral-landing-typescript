@@ -1,18 +1,17 @@
-import { MouseEvent } from "react";
 import Swiper from "../Swiper/Swiper";
+import { TImagePopupProps } from "../../../utils/types";
 
-function ImagePopup(props: any) {
-  function handleOverlayClose(e: MouseEvent) {
+function ImagePopup(props: TImagePopupProps) {
+  function handleOverlayClose(e: Event) {
     props.onOverlayClose(e);
   }
-
-  console.log(props.portfolioImage.isOpen)
+  
   return (
     <div
       className={`popup popup_handle_${props.name} ${
         props.portfolioImage.isOpen && "popup_opened"
       }`}
-      onClick={handleOverlayClose}
+      onClick={() => handleOverlayClose}
     >
       <div
         className={`image-viewing${

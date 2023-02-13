@@ -23,7 +23,7 @@ function App() {
     setSelectedImage(false);
   }
 
-  function handleOverlayClick(e: MouseEvent) {
+  function handleOverlayClick(e: Event) {
     (e.currentTarget === e.target ||
       (e.target as HTMLElement).classList.contains("swiper-slide")) &&
       closeAllPopups();
