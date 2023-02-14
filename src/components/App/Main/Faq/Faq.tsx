@@ -1,6 +1,7 @@
+import { IFaqProps } from "../../../../utils/interfaces";
 import FaqQuestion from "./FaqQuestion/FaqQustion";
 
-function Faq(props:any) {
+function Faq(props:IFaqProps) {
   return (
     <section className="faq" id={"faq"}>
       <h1 className="faq__title">Часто задаваемые вопросы</h1>

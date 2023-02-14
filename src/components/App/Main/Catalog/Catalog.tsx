@@ -1,7 +1,8 @@
 import CatalogCard from "./CatalogCard/CatalogCard";
 import { catalogData } from "../../../../utils/memorials";
+import { ICatalogProps } from "../../../../utils/interfaces";
 
-function Catalog(props:any) {
+function Catalog(props:ICatalogProps) {
   return (
     <section className="services" id={"services"}>
       <h2 className="services__title">Каталог памятников</h2>

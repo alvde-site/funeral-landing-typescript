@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { IFaqQuestionProps } from "../../../../../utils/interfaces";
 
-function FaqQuestion({ questionData }:any) {
+function FaqQuestion({ questionData }: IFaqQuestionProps) {
   const [isQuestionOpen, setIsQuestionOpen] = useState(false);
   function handleClick() {
     setIsQuestionOpen(!isQuestionOpen);
