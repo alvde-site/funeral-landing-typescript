@@ -1,4 +1,4 @@
-import { useState, useRef, ChangeEvent, FormEvent } from "react";
+import { useState, useRef, ChangeEvent, FormEvent, MouseEvent } from "react";
 import Result from "./Result/Result";
 import { infoImageFoto } from "../../../../utils/constants";
 import {
@@ -134,9 +134,11 @@ function Calculator(props: TCalculatorProps) {
     return Number(count.tilesize) === 900 ? 15 : 20;
   }
 
-  function handleDecreaseButton(e: any) {
-    const input = e.target.nextSibling.name;
-    const value = e.target.nextSibling.value;
+  function handleDecreaseButton(e: MouseEvent<HTMLButtonElement>) {
+    const input = ((e.target as HTMLElement).nextSibling as HTMLInputElement)
+      .name;
+    const value = ((e.target as HTMLElement).nextSibling as HTMLInputElement)
+      .value;
     let countNumber = selectLengthCountNumber();
     let val;
     switch (input) {
@@ -166,9 +168,11 @@ function Calculator(props: TCalculatorProps) {
     }
   }
 
-  function handleIncreaseButton(e: any) {
-    const input = e.target.previousSibling.name;
-    const value = e.target.previousSibling.value;
+  function handleIncreaseButton(e: MouseEvent<HTMLButtonElement>) {
+    const input = ((e.target as HTMLElement).nextSibling as HTMLInputElement)
+      .name;
+    const value = ((e.target as HTMLElement).nextSibling as HTMLInputElement)
+      .value;
     let countNumber = selectLengthCountNumber();
     let val;
     switch (input) {
