@@ -24,7 +24,7 @@ export type TCount = {
   gravescount: number;
   widthcount: number;
   lengthcount: number;
-  tilesize: number;
+  tilesize: string;
   neededcurbs: boolean;
   onlygraves: boolean;
 };

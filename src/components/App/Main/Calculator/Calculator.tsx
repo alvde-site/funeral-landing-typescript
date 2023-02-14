@@ -13,7 +13,7 @@ function Calculator(props: TCalculatorProps) {
     gravescount: 1,
     widthcount: 120,
     lengthcount: 210,
-    tilesize: 900,
+    tilesize: '900',
     neededcurbs: false,
     onlygraves: false,
   };
@@ -102,7 +102,10 @@ function Calculator(props: TCalculatorProps) {
     });
   }
 
-  function handleChangeCount(inputElement: string, newValue: number | boolean) {
+  function handleChangeCount(
+    inputElement: string,
+    newValue: string | number | boolean
+  ) {
     setCount((prevState) => {
       return { ...prevState, [inputElement]: newValue };
     });
@@ -192,20 +195,24 @@ function Calculator(props: TCalculatorProps) {
     }
   }
 
-  function handleExtraSize(extraLength: number, countItem: string, inputName: string) {
+  function handleExtraSize(
+    extraLength: number | undefined,
+    countItem: number,
+    inputName: string
+  ) {
     if (extraLength) {
-      const newValue = Number(countItem) + extraLength;
+      const newValue = countItem + extraLength;
       handleChangeCount(inputName, newValue);
     }
   }
 
   function getExtraSize(value: string, countItem: number) {
-    if (Number(value) === 3600) {
+    if (value === "3600") {
       const extraLength = 20 - (countItem % 20);
       return 20 !== extraLength ? extraLength : 0;
     }
 
-    if (Number(value) === 900) {
+    if (value === "900") {
       const extraLength = 15 - (countItem % 15);
       return 15 !== extraLength ? extraLength : 0;
     }
