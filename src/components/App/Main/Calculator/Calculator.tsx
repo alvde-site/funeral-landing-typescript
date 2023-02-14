@@ -13,7 +13,7 @@ function Calculator(props: TCalculatorProps) {
     gravescount: 1,
     widthcount: 120,
     lengthcount: 210,
-    tilesize: '900',
+    tilesize: "900",
     neededcurbs: false,
     onlygraves: false,
   };
@@ -61,22 +61,24 @@ function Calculator(props: TCalculatorProps) {
   }
 
   function calculations(count: TCount, priceList: TPriceLIst) {
-    const tilesCount: number = Number(
-      Math.ceil(
-        ((((count.onlygraves
-          ? count.gravescount > 1
-            ? count.gravescount * 110
-            : 120
-          : count.widthcount) /
-          100) *
-          count.lengthcount) /
-          100) *
-          10
-      ).toFixed(1)
-    );
-    const tilesPrice =
+    const tilesCount: number =
+      Number(
+        Math.ceil(
+          ((((count.onlygraves
+            ? count.gravescount > 1
+              ? count.gravescount * 110
+              : 120
+            : count.widthcount) /
+            100) *
+            count.lengthcount) /
+            100) *
+            10
+        ).toFixed(1)
+      ) / 10;
+    const tilesPrice = Math.ceil(
       tilesCount *
-      (Number(count.tilesize) === 900 ? priceList.tile30 : priceList.tile60);
+        (count.tilesize === "900" ? priceList.tile30 : priceList.tile60)
+    );
 
     let curbsCount = 0;
     let curbsPrice = 0;
