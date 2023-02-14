@@ -1,8 +1,14 @@
-import { useState, useRef } from "react";
+import { useState, useRef, ChangeEvent, FormEvent } from "react";
 import Result from "./Result/Result";
 import { infoImageFoto } from "../../../../utils/constants";
+import {
+  TCalculatorProps,
+  TCount,
+  TPriceLIst,
+  TResult,
+} from "../../../../utils/types";
 
-function Calculator(props: any) {
+function Calculator(props: TCalculatorProps) {
   const defaultCount = {
     gravescount: 1,
     widthcount: 120,
@@ -40,7 +46,7 @@ function Calculator(props: any) {
     props.onInfoClick(infoImageFoto);
   }
 
-  function handleSumbit(e: any) {
+  function handleSumbit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     calculations(count, priceList);
     setResult((state) => {
@@ -54,18 +60,20 @@ function Calculator(props: any) {
     setResult(defaultResult);
   }
 
-  function calculations(count: any, priceList: any) {
-    const tilesCount: any = Math.ceil(
-      ((((count.onlygraves
-        ? count.gravescount > 1
-          ? count.gravescount * 110
-          : 120
-        : count.widthcount) /
-        100) *
-        count.lengthcount) /
-        100) *
-        10
-    ).toFixed(1);
+  function calculations(count: TCount, priceList: TPriceLIst) {
+    const tilesCount: number = Number(
+      Math.ceil(
+        ((((count.onlygraves
+          ? count.gravescount > 1
+            ? count.gravescount * 110
+            : 120
+          : count.widthcount) /
+          100) *
+          count.lengthcount) /
+          100) *
+          10
+      ).toFixed(1)
+    );
     const tilesPrice =
       tilesCount *
       (Number(count.tilesize) === 900 ? priceList.tile30 : priceList.tile60);
@@ -82,7 +90,7 @@ function Calculator(props: any) {
 
     const totalCount = tilesPrice + curbsPrice;
 
-    setResult((prevState: any) => {
+    setResult((prevState: TResult) => {
       return {
         ...prevState,
         tilescount: tilesCount,
@@ -94,13 +102,13 @@ function Calculator(props: any) {
     });
   }
 
-  function handleChangeCount(inputElement: any, newValue: any) {
+  function handleChangeCount(inputElement: string, newValue: number | boolean) {
     setCount((prevState) => {
       return { ...prevState, [inputElement]: newValue };
     });
   }
 
-  function handleCheckChange(e: any) {
+  function handleCheckChange(e: ChangeEvent<HTMLInputElement>) {
     const input = e.target.name;
     let val;
     switch (input) {
@@ -184,14 +192,14 @@ function Calculator(props: any) {
     }
   }
 
-  function handleExtraSize(extraLength: any, countItem: any, inputName: any) {
+  function handleExtraSize(extraLength: number, countItem: string, inputName: string) {
     if (extraLength) {
       const newValue = Number(countItem) + extraLength;
       handleChangeCount(inputName, newValue);
     }
   }
 
-  function getExtraSize(value: any, countItem: any) {
+  function getExtraSize(value: string, countItem: number) {
     if (Number(value) === 3600) {
       const extraLength = 20 - (countItem % 20);
       return 20 !== extraLength ? extraLength : 0;
@@ -203,7 +211,7 @@ function Calculator(props: any) {
     }
   }
 
-  function handleSelectChange(e: any) {
+  function handleSelectChange(e: ChangeEvent<HTMLSelectElement>) {
     const target = e.target;
     const name = target.name;
     const value = target.value;
@@ -388,7 +396,7 @@ function Calculator(props: any) {
             ></input>
           </div>
         </form>
-        <Result result={result} count={count} />
+        <Result result={result} />
       </div>
     </section>
   );
