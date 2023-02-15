@@ -1,18 +1,18 @@
-interface ICatalogCard {
+export interface ICatalogCard {
   title: string;
   desc: string;
   slideSrc: string[];
   src: string;
   price: string;
+  isOpen?: boolean;
 }
 
 export interface ICatalogProps {
-  onImageClick: (imageSrc: IPortfolioImage | ICatalogCard | string) => void;
+  onImageClick: (imageSrc: IPortfolioImage | ICatalogCard) => void;
 }
 
 export interface ICatalogCardProps extends ICatalogProps {
   catalogCard: ICatalogCard;
-  key: number;
 }
 
 interface IFaqDataItem {
@@ -67,7 +67,7 @@ export interface IMainProps {
   portfolioImages: IPortfolioImage[];
   servicesData: IServiceData[];
   questionsDataList: IFaqDataItem[];
-  onImageClick: (imageSrc: IPortfolioImage | ICatalogCard | string) => void;
+  onImageClick: (imageSrc: IPortfolioImage | ICatalogCard ) => void;
 }
 
 export interface IImageViewingProps {

@@ -10,7 +10,7 @@ import {
 } from "../../utils/constants";
 import ScrollUp from "./ScrollUp/ScrollUp";
 import Topnav from "./Topnav/Topnav";
-import { ICatalogProps, IPortfolioImage } from "../../utils/interfaces";
+import { ICatalogCard, IPortfolioImage } from "../../utils/interfaces";
 
 function App() {
   const [isToggleBurger, setIsToggleBurger] = useState(false);
@@ -30,7 +30,7 @@ function App() {
       closeAllPopups();
   }
 
-  function handleImageClick(imageSrc: any) {
+  function handleImageClick(imageSrc: ICatalogCard | IPortfolioImage) {
     imageSrc.isOpen = true;
     setSelectedImage(imageSrc);
   }

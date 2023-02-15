@@ -1,4 +1,6 @@
-function PortfolioImage(props: any) {
+import { IPortfolioImageProps } from "../../../../../utils/interfaces";
+
+function PortfolioImage(props: IPortfolioImageProps) {
   function handleClick() {
     props.onImageClick(props.portfolioImage);
   }

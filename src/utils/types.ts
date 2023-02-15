@@ -1,4 +1,4 @@
-type TPortfolioImage = {
+export type TPortfolioImage = {
   src?: string;
   slideSrc?: string[];
   isOpen?: boolean;
