@@ -10,6 +10,7 @@ import {
 } from "../../utils/constants";
 import ScrollUp from "./ScrollUp/ScrollUp";
 import Topnav from "./Topnav/Topnav";
+import { ICatalogProps, IPortfolioImage } from "../../utils/interfaces";
 
 function App() {
   const [isToggleBurger, setIsToggleBurger] = useState(false);

@@ -9,8 +9,9 @@ import Reviews from "./Reviews/Reviews";
 import Conditions from "./Conditions/Conditions";
 import Catalog from "./Catalog/Catalog";
 import Calculator from "./Calculator/Calculator";
+import { IMainProps } from "../../../utils/interfaces";
 
-function Main(props: any) {
+function Main(props: IMainProps) {
   return (
     <main className="content">
       <Advertisement />

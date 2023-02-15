@@ -4,6 +4,17 @@ type TPortfolioImage = {
   isOpen?: boolean;
 };
 
+type TReviewList = {
+  avatar: string;
+  name: string;
+  location: string;
+  text: string;
+};
+
+export type TReviewCardProps = {
+  review: TReviewList;
+};
+
 export type TImagePopupProps = {
   portfolioImage: TPortfolioImage;
   onClose: () => void;

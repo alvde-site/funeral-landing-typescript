@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { handleTopnavTopPosition } from "../../../utils/utils";
 import { mtsTel, a1Tel, email } from "../../../utils/constants";
 import { formattedTel } from "../../../utils/utils";
+import { ITopnavProps } from "../../../utils/interfaces";
 
-function Topnav(props:any) {
+function Topnav(props: ITopnavProps) {
   const topnav = useRef<HTMLElement>(null);
   const [isShownDropdown, setIsShownDropdown] = useState(false);
 
@@ -22,7 +23,7 @@ function Topnav(props:any) {
     props.onToggleBurger();
   }
 
-  function handleShowDropdown(e:any) {
+  function handleShowDropdown() {
     setIsShownDropdown(!isShownDropdown);
   }
 

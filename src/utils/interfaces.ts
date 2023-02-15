@@ -32,8 +32,9 @@ export interface IFaqQuestionProps {
 }
 
 export interface IPortfolioImage {
-  src: string;
+  src?: string;
   slideSrc?: string[];
+  isOpen?: boolean;
 }
 
 interface IPortfolioImages extends Array<IPortfolioImage> {}
@@ -45,4 +46,35 @@ export interface IPortfolioProps extends ICatalogProps {
 export interface IPortfolioImageProps extends ICatalogProps {
   portfolioImage: IPortfolioImage;
   key: number;
+}
+
+export interface IServiceData {
+  title: string;
+  desc: string;
+  image: string;
+  price: string;
+}
+
+export interface IServiceProps {
+  servicesData: IServiceData[];
+}
+
+export interface IServiceCardProps {
+  servicesCard: IServiceData;
+}
+
+export interface IMainProps {
+  portfolioImages: IPortfolioImage[];
+  servicesData: IServiceData[];
+  questionsDataList: IFaqDataItem[];
+  onImageClick: (imageSrc: IPortfolioImage | ICatalogCard | string) => void;
+}
+
+export interface IImageViewingProps {
+  slideImages: string[];
+}
+
+export interface ITopnavProps {
+  isToggleBurger: boolean;
+  onToggleBurger: () => void;
 }

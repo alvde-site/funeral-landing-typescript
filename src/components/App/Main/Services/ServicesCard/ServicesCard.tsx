@@ -1,4 +1,6 @@
-function ServicesCard(props:any) {
+import { IServiceCardProps } from "../../../../../utils/interfaces";
+
+function ServicesCard(props: IServiceCardProps) {
   return (
     <li className="services__card">
       <img

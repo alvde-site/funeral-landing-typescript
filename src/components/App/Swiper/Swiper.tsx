@@ -7,8 +7,9 @@ import "swiper/css/navigation";
 import "./Swiper.css";
 
 import { Navigation } from "swiper";
+import { IImageViewingProps } from "../../../utils/interfaces";
 
-function imagesViewing(props: any) {
+function imagesViewing(props: IImageViewingProps) {
   return (
     <Swiper
       spaceBetween={50}
@@ -18,7 +19,7 @@ function imagesViewing(props: any) {
       navigation={true}
       modules={[Navigation]}
     >
-      {props.slideImages.map((slideImage: any, index: any) => {
+      {props.slideImages.map((slideImage: string, index: number) => {
         return (
           <SwiperSlide key={index}>
             <figure className="image-viewing__img-card">

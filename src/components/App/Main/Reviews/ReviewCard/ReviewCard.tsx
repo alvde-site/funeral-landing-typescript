@@ -1,4 +1,6 @@
-function ReviewCard({ review }:any) {
+import { TReviewCardProps } from "../../../../../utils/types";
+
+function ReviewCard({ review }:TReviewCardProps) {
   return (
     <li className="reviews__content">
       <img
