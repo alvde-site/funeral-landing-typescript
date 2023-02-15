@@ -2,16 +2,18 @@
 Лэндинг для funeral-services
 
 ## Ссылки
-* [Ссылка на выложенную на сервер работающую фронтенд часть приложения: https://alvdediploma.nomoredomains.xyz/](https://alvdediploma.nomoredomains.xyz/). Если ссылка на сайт не работает, можно протестировать приложения локально, инструкция по развертыванию [ниже](#Инструкция-по-развертыванию)
+* [Ссылка на выложенную на сервер работающую фронтенд часть приложения: https://celebrated-boba-f87c90.netlify.app/](https://celebrated-boba-f87c90.netlify.app/). Если ссылка на сайт не работает, можно протестировать приложения локально, инструкция по развертыванию [ниже](#Инструкция-по-развертыванию)
 
 Технологии используемые в проекте:
 * Flexbox, Grid
-* Верстка по БЭМ(Nested)
+* Верстка по БЭМ
 * Адаптивная верстка
 * JS
 * webpack
 * React, useState, useEffect, useHistory
-* Swiper
+* Swiper slide
+* Typescript
+* Калькулятор
 
 
 ### Breakpoints in project:
