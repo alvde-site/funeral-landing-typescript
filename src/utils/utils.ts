@@ -6,35 +6,35 @@ export const toggleBurger = () => {
   menu.classList.toggle("topnav__links_opened");
 };
 
-const activateTopnavShadow = (topnav:any) => {
+const activateTopnavShadow = (topnav: HTMLElement) => {
   topnav.classList.add("topnav_on_shadow");
 };
 
-const deactivateTopnavShadow = (topnav:any) => {
+const deactivateTopnavShadow = (topnav: HTMLElement) => {
   topnav.classList.remove("topnav_on_shadow");
 };
 
-const activateTopnavContacts = (topnavContacts:any) => {
+const activateTopnavContacts = (topnavContacts: HTMLElement) => {
   topnavContacts.classList.add("topnav__contacts_active");
 };
 
-const deactivateTopnavContacts = (topnavContacts:any) => {
+const deactivateTopnavContacts = (topnavContacts: HTMLElement) => {
   topnavContacts.classList.remove("topnav__contacts_active");
 };
 
 //Работа с кнопкой наверх при скоролле
-const activateScrollUpButton = (button:any) => {
+const activateScrollUpButton = (button: HTMLButtonElement) => {
   button.classList.add("scrollup_active");
 };
 
-const deactivateScrollUpButton = (button:any) => {
+const deactivateScrollUpButton = (button: HTMLButtonElement) => {
   button.classList.remove("scrollup_active");
 };
 
 //Активирует тень когда topnav на верху
-export const handleTopnavTopPosition = (topnav:any) => {
-  const topnavContacts = document.querySelector(".topnav__contacts");
-  const scrollUpButton = document.querySelector(".scrollup");
+export const handleTopnavTopPosition = (topnav: any) => {
+  const topnavContacts = document.querySelector(".topnav__contacts") as HTMLElement;
+  const scrollUpButton = document.querySelector(".scrollup") as HTMLButtonElement;
   if (!topnav) {
     return;
   } else {
@@ -61,7 +61,7 @@ export const handeDeviceWidth = () => {
   }
 };
 
-export const formattedTel = (tel:any) => {
+export const formattedTel = (tel: string) => {
   return `+375(29) ${
     tel.slice(-7, -4) + "-" + tel.slice(-4, -2) + "-" + tel.slice(-2)
   }`;

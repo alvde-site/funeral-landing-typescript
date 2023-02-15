@@ -15,7 +15,7 @@ export interface ICatalogCardProps extends ICatalogProps {
   catalogCard: ICatalogCard;
 }
 
-interface IFaqDataItem {
+export interface IFaqDataItem {
   question: string;
   answer: string;
 }
@@ -28,7 +28,6 @@ export interface IFaqProps {
 
 export interface IFaqQuestionProps {
   questionData: IFaqDataItem;
-  key: string;
 }
 
 export interface IPortfolioImage {
