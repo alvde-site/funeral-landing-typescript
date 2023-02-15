@@ -169,9 +169,9 @@ function Calculator(props: TCalculatorProps) {
   }
 
   function handleIncreaseButton(e: MouseEvent<HTMLButtonElement>) {
-    const input = ((e.target as HTMLElement).nextSibling as HTMLInputElement)
+    const input = ((e.target as HTMLElement).previousSibling as HTMLInputElement)
       .name;
-    const value = ((e.target as HTMLElement).nextSibling as HTMLInputElement)
+    const value = ((e.target as HTMLElement).previousSibling as HTMLInputElement)
       .value;
     let countNumber = selectLengthCountNumber();
     let val;
