@@ -1,7 +1,7 @@
-import { IFaqProps } from "../../../../utils/interfaces";
+import { IFaqDataItem, IFaqProps } from "../../../../utils/interfaces";
 import FaqQuestion from "./FaqQuestion/FaqQustion";
 
-function Faq(props:IFaqProps) {
+function Faq(props: IFaqProps) {
   return (
     <section className="faq" id={"faq"}>
       <h1 className="faq__title">Часто задаваемые вопросы</h1>
@@ -10,9 +10,13 @@ function Faq(props:IFaqProps) {
         <div className="faq__content-items">
           <div className="faq__questions-wrapper">
             <ul className="faq__questions">
-              {props.questionsDataList.map((questionData:any, index:any) => {
-                return <FaqQuestion questionData={questionData} key={index} />;
-              })}
+              {props.questionsDataList.map(
+                (questionData: IFaqDataItem, index: number) => {
+                  return (
+                    <FaqQuestion questionData={questionData} key={index} />
+                  );
+                }
+              )}
             </ul>
           </div>
         </div>

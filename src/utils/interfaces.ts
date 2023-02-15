@@ -66,7 +66,7 @@ export interface IMainProps {
   portfolioImages: IPortfolioImage[];
   servicesData: IServiceData[];
   questionsDataList: IFaqDataItem[];
-  onImageClick: (imageSrc: IPortfolioImage | ICatalogCard ) => void;
+  onImageClick: (imageSrc: IPortfolioImage | ICatalogCard) => void;
 }
 
 export interface IImageViewingProps {

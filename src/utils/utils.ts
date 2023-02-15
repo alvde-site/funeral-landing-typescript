@@ -1,4 +1,5 @@
 import { burger, menu } from "./constants";
+import { THandleTopnavTopPosition } from "./types";
 
 // Переключает меню бургера
 export const toggleBurger = () => {
@@ -32,9 +33,15 @@ const deactivateScrollUpButton = (button: HTMLButtonElement) => {
 };
 
 //Активирует тень когда topnav на верху
-export const handleTopnavTopPosition = (topnav: any) => {
-  const topnavContacts = document.querySelector(".topnav__contacts") as HTMLElement;
-  const scrollUpButton = document.querySelector(".scrollup") as HTMLButtonElement;
+export const handleTopnavTopPosition: THandleTopnavTopPosition = (
+  topnav?: HTMLElement | null
+) => {
+  const topnavContacts = document.querySelector(
+    ".topnav__contacts"
+  ) as HTMLElement;
+  const scrollUpButton = document.querySelector(
+    ".scrollup"
+  ) as HTMLButtonElement;
   if (!topnav) {
     return;
   } else {

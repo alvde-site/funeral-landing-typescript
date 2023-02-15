@@ -1,3 +1,8 @@
+export type THandleTopnavTopPosition = {
+  (topnav: HTMLElement | null): void;
+  (): void;
+};
+
 export type TPortfolioImage = {
   src?: string;
   slideSrc?: string[];

@@ -1,6 +1,6 @@
 import { ICatalogCardProps } from "../../../../../utils/interfaces";
 
-function CatalogCard(props:ICatalogCardProps) {
+function CatalogCard(props: ICatalogCardProps) {
   function handleOpenSlide() {
     props.onImageClick(props.catalogCard);
   }

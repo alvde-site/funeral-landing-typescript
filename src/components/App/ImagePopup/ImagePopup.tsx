@@ -5,7 +5,7 @@ function ImagePopup(props: TImagePopupProps) {
   function handleOverlayClose(e: Event) {
     props.onOverlayClose(e);
   }
-  
+
   return (
     <div
       className={`popup popup_handle_${props.name} ${
